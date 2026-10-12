@@ -31,14 +31,17 @@ export function SmoothScroll() {
       let to = from;
       let t = 0;
       for (let i = 0; i < stops.length - 1; i++) {
-        if (center >= stops[i].c && center < stops[i + 1].c) {
-          from = stops[i].zone;
-          to = stops[i + 1].zone;
-          t = (center - stops[i].c) / (stops[i + 1].c - stops[i].c);
+        const a = stops[i]!;
+        const b = stops[i + 1]!;
+        if (center >= a.c && center < b.c) {
+          from = a.zone;
+          to = b.zone;
+          t = (center - a.c) / (b.c - a.c);
         }
       }
-      if (stops.length && center >= stops[stops.length - 1].c) {
-        from = to = stops[stops.length - 1].zone;
+      const last = stops[stops.length - 1];
+      if (last && center >= last.c) {
+        from = to = last.zone;
       }
       const el = bgRef.current;
       if (el) {

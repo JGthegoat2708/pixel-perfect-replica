@@ -91,11 +91,12 @@ function AICore() {
 
     const { dirs, radii, pos } = particles;
     for (let i = 0; i < COUNT; i++) {
-      radii[i] += dt * (0.25 + (i % 7) * 0.05);
-      if (radii[i] > 4.3) radii[i] = 1.1;
-      pos[i * 3] = dirs[i * 3] * radii[i];
-      pos[i * 3 + 1] = dirs[i * 3 + 1] * radii[i];
-      pos[i * 3 + 2] = dirs[i * 3 + 2] * radii[i];
+      let r = radii[i]! + dt * (0.25 + (i % 7) * 0.05);
+      if (r > 4.3) r = 1.1;
+      radii[i] = r;
+      pos[i * 3] = dirs[i * 3]! * r;
+      pos[i * 3 + 1] = dirs[i * 3 + 1]! * r;
+      pos[i * 3 + 2] = dirs[i * 3 + 2]! * r;
     }
     const attr = pointsGeo.current?.getAttribute("position");
     if (attr) attr.needsUpdate = true;
