@@ -248,9 +248,9 @@ function Universe() {
       </group>
       <Nebula />
       <SpaceDust />
-      <Planet position={[-7, 2.5, -14]} radius={1.6} colors={["#6f8fd8", "#2c3f86"]} speed={0.08} />
-      <Planet position={[9, -3, -27]} radius={2.6} colors={["#d9b98c", "#8a6440"]} ring speed={0.05} />
-      <Planet position={[-10, -5, -42]} radius={3.4} colors={["#7fc7d6", "#21607a"]} speed={0.04} />
+      <Planet position={[-13, 6, -20]} radius={1.6} colors={["#6f8fd8", "#2c3f86"]} speed={0.08} />
+      <Planet position={[15, -7, -30]} radius={2.6} colors={["#d9b98c", "#8a6440"]} ring speed={0.05} />
+      <Planet position={[-14, -9, -46]} radius={3.4} colors={["#7fc7d6", "#21607a"]} speed={0.04} />
     </>
   );
 }
